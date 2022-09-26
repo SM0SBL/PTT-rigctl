@@ -1,4 +1,4 @@
-# PTT-rigcel
+# PTT-rigctl
 Connect an external PTT button using CTS or DSR on a serial port an connect to a rigctl compatible device
 This program was written mainly to allow a physical PTT button when using wfview but should work with other rigctl compatible progams as well.
 
