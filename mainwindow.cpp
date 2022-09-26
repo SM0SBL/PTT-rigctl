@@ -67,6 +67,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Setup colors to key connect buttons
     ui->ConnectToKeyNetwork->setStyleSheet("background-color: red;");
     ui->ConnectToKeyPort->setStyleSheet("background-color: red;");
+    ui->keyButton->setStyleSheet("background-color: lightgray;");
 
     // Load settings from file system from last open session
     loadSettings();
@@ -182,6 +183,8 @@ void MainWindow::KeyUp()
     Data.append("T 0\n");
     tcpKeySocket->write(Data.data());
     tcpKeySocket->waitForBytesWritten(1);
+    ui->keyButton->setStyleSheet("background-color: lightgray;");
+
 }
 
 void MainWindow::KeyDown()
@@ -190,6 +193,7 @@ void MainWindow::KeyDown()
     Data.append("T 1\n");
     tcpKeySocket->write(Data.data());
     tcpKeySocket->waitForBytesWritten(1);
+    ui->keyButton->setStyleSheet("background-color: red;");
 }
 
 void MainWindow::readyReadKeySerial()
